@@ -17,8 +17,8 @@ spec:
                   image: nginx
                   imagePullPolicy: Never
                   ports:
-                      - containerPort: 100 
-                      - containerPort: 200 # for ssl
+                      - containerPort: 80
+                      - containerPort: 443 # for ssl
 ---
 apiVersion: v1
 kind: Service
@@ -29,12 +29,11 @@ metadata:
 spec:
     type: LoadBalancer
     ports:
-        - port: 1000
-          targetPort: 100
+        - port: 80
+          targetPort: 80
           name: ng
-        - port: 2000
-          targetPort: 200
+        - port: 443
+          targetPort: 443
           name: ng-ssl
     selector:
         ng-ptr: ng-ptr
-

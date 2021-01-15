@@ -13,6 +13,7 @@ function get_back()
 {
 	replace_ip  $MKIP  'MINIKUBE_IP' './metallb/config.yaml';
 	replace_ip $MKIP  'MINIKUBE_IP' './ftps/ftpsImage/vsftpd.conf';
+	replace_ip $MKIP 'MINIKUBE_IP' './nginx/image/default.conf';
 }
 
 # VARIABLES
@@ -48,5 +49,13 @@ sh ./mysql/install.sh
 sh ./phpmyadmin/install.sh
 print_line 'PHPMYADMIN instaled' $GREEN
 # phpmyadmin installed
+
+
+# installing NGINX
+print_line 'installing nginx' $YELLOW
+replace_ip 'MINIKUBE_IP' $MKIP './nginx/image/default.conf';
+#sh ./nginx/install.sh
+
+# NGINX installed
 
 get_back
