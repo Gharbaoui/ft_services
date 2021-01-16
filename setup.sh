@@ -13,7 +13,7 @@ function get_back()
 {
 	replace_ip  $MKIP  'MINIKUBE_IP' './metallb/config.yaml';
 	replace_ip $MKIP  'MINIKUBE_IP' './ftps/ftpsImage/vsftpd.conf';
-	replace_ip $MKIP 'MINIKUBE_IP' './nginx/image/default.conf';
+	replace_ip $MKIP 'MINIKUBE_IP' './nginx/nginxImage/default.conf';
 }
 
 # VARIABLES
@@ -23,7 +23,7 @@ export NORM='\033[0m'
 
 # starting MINIKUBE
 export MINIKUBE_HOME=~/goinfre/
-minikube start
+minikube start --driver=virtualbox
 eval $(minikube docker-env)
 export MKIP=$(minikube ip)
 # MINIKUBE STARTED
@@ -53,7 +53,8 @@ print_line 'PHPMYADMIN instaled' $GREEN
 
 # installing NGINX
 print_line 'installing nginx' $YELLOW
-replace_ip 'MINIKUBE_IP' $MKIP './nginx/image/default.conf';
+replace_ip 'MINIKUBE_IP' $MKIP './nginx/nginxImage/default.conf';
+sh ./nginx/install.sh
 #sh ./nginx/install.sh
 
 # NGINX installed
