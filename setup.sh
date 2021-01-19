@@ -22,7 +22,7 @@ export NORM='\033[0m'
 
 # starting MINIKUBE
 export MINIKUBE_HOME=~/goinfre/
-minikube start
+minikube start --driver=virtualbox
 eval $(minikube docker-env)
 export MKIP=$(minikube ip)
 # MINIKUBE STARTED
