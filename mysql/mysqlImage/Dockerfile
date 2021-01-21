@@ -8,5 +8,6 @@ RUN rc
 #RUN /etc/init.d/mariadb setup
 run rm /etc/my.cnf.d/mariadb-server.cnf
 COPY mariadb-server.cnf /etc/my.cnf.d/
+COPY mohamed_db.sql ./ 
 COPY start-mariadb.sh ./
 CMD ["sh", "./start-mariadb.sh"]
