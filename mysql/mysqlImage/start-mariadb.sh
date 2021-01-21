@@ -5,5 +5,6 @@ mysql -e "CREATE DATABASE mohamed_db;"
 mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'mohamed'@'%';"
 mysql -e "FLUSH PRIVILEGES"
 service mariadb restart
+/telegraf/telegraf &
 echo "mariadb started"
 tail -f /dev/null

@@ -15,5 +15,12 @@ COPY config.inc.php ./phpmyadmin/
 RUN mkdir /phpmyadmin/tmp
 RUN chmod 777 /phpmyadmin/tmp
 COPY start.sh ./
+
+# telegraf
+RUN wget https://dl.influxdata.com/telegraf/releases/telegraf-1.13.3-static_linux_amd64.tar.gz
+RUN tar xf telegraf-1.13.3-static_linux_amd64.tar.gz
+RUN chmod +x /telegraf/*
+RUN mkdir /etc/telegraf/
+COPY telegraf.conf /etc/telegraf/
 EXPOSE 5000
 CMD ["sh", "start.sh"]
