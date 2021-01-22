@@ -37,10 +37,10 @@ kubectl apply -f ./stCls.yaml
 # metallb installed
 
 # installing ftps username is 'mohamed' password '1234'
-print_line 'installing FTPS server' $YELLOW
-replace_ip 'MINIKUBE_IP' $MKIP './ftps/ftpsImage/vsftpd.conf'
-sh ./ftps/install.sh
-print_line 'FTPS server installed' $GREEN
+#print_line 'installing FTPS server' $YELLOW
+#replace_ip 'MINIKUBE_IP' $MKIP './ftps/ftpsImage/vsftpd.conf'
+#sh ./ftps/install.sh
+#print_line 'FTPS server installed' $GREEN
 # ftps installed
 
 # installing phpmyadmin 'mohamed' '1234'
@@ -52,11 +52,11 @@ print_line 'PHPMYADMIN instaled' $GREEN
 
 
 # installing NGINX
-print_line 'installing nginx' $YELLOW
-replace_ip 'MINIKUBE_IP' $MKIP './nginx/nginxImage/default.conf';
-sh ./nginx/install.sh
+#print_line 'installing nginx' $YELLOW
+#replace_ip 'MINIKUBE_IP' $MKIP './nginx/nginxImage/default.conf';
 #sh ./nginx/install.sh
-
+#sh ./nginx/install.sh
 # NGINX installed
+
 
 get_back

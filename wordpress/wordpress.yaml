@@ -31,5 +31,5 @@ spec:
     selector:
         wo-ptr: wo-ptr
     ports:
-        - port: 100
+        - port: 2000
           targetPort: 5050

@@ -1,6 +1,6 @@
 <?php
 
-define( 'DB_NAME', 'wordpress_db' );
+define( 'DB_NAME', 'wordpress' );
 
 define( 'DB_USER', 'mohamed' );
 
